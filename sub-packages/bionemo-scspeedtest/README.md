@@ -13,10 +13,16 @@ python -m venv bionemo_singlecell_benchmark
 source bionemo_singlecell_benchmark/bin/activate
 ```
 
-### 1. Install Package
+### 1. Download and Install Package
 
 ```bash
-pip install -e .
+git clone --depth 1 --filter=blob:none \
+  --sparse https://github.com/NVIDIA/bionemo-framework.git
+cd bionemo-framework
+git sparse-checkout set sub-packages/bionemo-scspeedtest
+cd sub-packages/bionemo-scspeedtest/
+
+pip install .
 ```
 
 ## Quick Start
